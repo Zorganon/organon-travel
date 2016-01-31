@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Dancing script';
+}
+
+p {
+    font-family: 'Josefin Sans';
+}

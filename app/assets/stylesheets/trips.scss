@@ -1,3 +1,21 @@
 // Place all the styles related to the trips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.trip-image {
+  width: 50%;
+}
+
+.trip-detail-text {
+  font-family: 'Josefin Sans', 'sans serif';
+}
+
+.trip-image{
+  max-width: 100%;
+}
+
+.page-container {
+  background: url('wov.png') repeat 0 0;
+  border-radius: 20px;
+  max-width: 80%;
+}
+
