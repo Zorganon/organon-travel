@@ -6,7 +6,7 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
       can :manage, User, id: user_id
-      unless user.admin?, cannot :destroy, Comment
+      
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
