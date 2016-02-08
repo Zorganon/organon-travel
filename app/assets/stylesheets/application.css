@@ -30,3 +30,7 @@ p {
   border-radius: 20px;
   max-width: 80%;
 }
+
+.navbar-item {
+  font-family: 'Josefin Sans', cursive;
+}

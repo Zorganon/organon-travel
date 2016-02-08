@@ -8,12 +8,13 @@ class UserMailer < ApplicationMailer
       :subject => "A new contact from #{name}")
   end
   
-  def signup(user)
+  def signup_form(user)
     @user = user
-    mail(to: @user.email,
-      subject: 'Welcome to Organon Travel',
-      template_path: 'user_mailer',
-      template_name: 'signup_form')
+    mail(:to => user.email,
+      :from => 'OrganonTravel@gmail.com',
+      :subject => 'Welcome to Organon Travel',
+      :template_path => 'user_mailer',
+      :template_name => 'signup_form.html')
   end
 end
 

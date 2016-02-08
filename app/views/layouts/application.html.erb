@@ -34,15 +34,15 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><%= link_to 'TRIPS', trips_path %></li>
-          <li><%= link_to 'Contact Us', static_pages_contact_path %></li>
+          <li><%= link_to 'Trips', trips_path, :class => "navbar-item" %></li>
+          <li><%= link_to 'Contact Us', static_pages_contact_path, :class => "navbar-item" %></li>
           <li>
             <div class="navbar-form" role="search">
               <div class="form-group">
                 <%= form_tag('/trips', method: "get") do %>
-                  <%= label_tag(:q,  "Search for:", :class => "search-box-label") %>
+                  <%= label_tag(:q,  "Search for:", :class => "search-box-label navbar-item") %>
                   <%= text_field_tag(:q) %>
-                  <%= submit_tag("Search", :type => "submit", :class => "btn btn-primary") %>
+                  <%= submit_tag("Search", :type => "submit", :class => "btn btn-primary navbar-item") %>
                 <% end %>
               </div>
             </div>
@@ -51,9 +51,9 @@
         <ul class="nav pull-right nav-text">
           <li>
           <% if user_signed_in? %>
-            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "navbar-item") %>
           <% else %>
-            <%= link_to('Login', new_user_session_path) %>
+            <%= link_to('Login', new_user_session_path, :class => "navbar-item") %>
           <% end %>
           </li>
         </ul>
