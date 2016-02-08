@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   def create
     @trip = Trip.find(params[:trip_id])
     @comment = @trip.comments.new(comment_params)
-    @comment.user = current.user
+    @comment.user = current_user
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @trip, notice: 'Review was created successfully.' }
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
   
   private
   def comment_params
-    params.require(:comment).permit(:user_id,:body)
+    params.require(:comment).permit(:user_id, :body)
   end
   
 end

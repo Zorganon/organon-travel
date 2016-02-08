@@ -1,30 +1,13 @@
 <p id="notice"><%= notice %></p>
 <div class="container trip-box">
-  <br>
-  <p>
-    <strong class="trip-element">Name:</strong>
-    <%= @trip.name %>
-  </p>
-  
-  <p>
-    <strong class="trip-element">Description:</strong>
-    <%= @trip.description %>
-  </p>
-  
-  <p>
-    <%= image_tag(@trip.image_url, :class => "img img-rounded") %>
-  </p>
-  
-  <p>
-    <strong class="trip-element">Price:</strong>
-    <%= @trip.price %>
-  </p>
-  
+  <%= render @trip %>
+    
   <%= link_to 'Edit', edit_trip_path(@trip) %> |
   <%= link_to 'Back', trips_path %>
   
   <%= render 'new_comment' %>
   <hr>
-  <%= render 'comments' %>
-
+  <div class="row show-page-product-detail">
+    <%= render 'comments' %>
+  </div>
 </div>
