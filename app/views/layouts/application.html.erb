@@ -37,12 +37,14 @@
           <li><%= link_to 'TRIPS', trips_path %></li>
           <li><%= link_to 'Contact Us', static_pages_contact_path %></li>
           <li>
-            <div class="form-group">
-              <%= form_tag('/trips', method: "get") do %>
-                <%= label_tag(:q,  "Search for:") %>
-                <%= text_field_tag(:q) %>
-                <%= submit_tag("Search") %>
-              <% end %>
+            <div class="navbar-form" role="search">
+              <div class="form-group">
+                <%= form_tag('/trips', method: "get") do %>
+                  <%= label_tag(:q,  "Search for:", :class => "search-box-label") %>
+                  <%= text_field_tag(:q) %>
+                  <%= submit_tag("Search", :type => "submit", :class => "btn btn-primary") %>
+                <% end %>
+              </div>
             </div>
           </li>
         </ul>
@@ -66,7 +68,9 @@
   <% if alert %>
     <p id="alert" class="alert alert-danger" role="alert"><%= alert %></p>
   <% end %>
-  <%= yield %>
-
+  <div class="container">
+    <%= yield %>
+    <br>
+  </div>
 </body>
 </html>

@@ -19,7 +19,7 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
-    @comments = @trip.comments
+    @comments = @trip.comments.paginate(:page => params[:page], :per_page => 6)
   end
 
   # GET /trips/new
