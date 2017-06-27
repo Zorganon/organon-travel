@@ -2,10 +2,15 @@
 <div class="container page-container">
   <h1>Listing Trips</h1>
   <div class="trip-box">
-    <%= render @trips %>
+    <% if user_signed_in? && current_user.admin? %>
+      <%= render :partial => "admintrips", :collection => @trips %>
+    <% else %>
+      <%= render @trips %>
+    <% end %>
   </div>
   <br>
   <% if user_signed_in? && current_user.admin? %>
     <%= link_to 'New Trip', new_trip_path, :class => "btn btn-default", :type => "button" %>
+    
   <% end %>
 </div>
